@@ -91,7 +91,7 @@ if (isset($_GET["id"])) {
                 <h6> Inclusief BTW </h6>
                 <form method="post">
                     <input type="number" name="stockItemID" value="<?php print($stockItemID) ?>" hidden>
-                    <button type="submitfavorit" name="submitfavorit" id="Toevoegen" style="margin-top: 75px;"> <a ><i type="Toevoegen" name="Toevoegen" class="fas fa-heart"> Favorieten</i></button>
+                    <button type="submit" name="submit" id="Toevoegen" style="margin-top: 75px;"> <a ><i type="Toevoegen" name="Toevoegen" class="fas fa-heart"> Favorieten</i></button>
                 </form>
                 <form method="post">
                     <input type="number" name="stockItemID" value="<?php print($stockItemID) ?>" hidden>
@@ -110,13 +110,8 @@ if (isset($_GET["id"])) {
             $stockItemID = $_POST["stockItemID"];
             addProductToCart($stockItemID);         // maak gebruik van geïmporteerde functie uit cartfuncties.php
         }
-
-        if (isset($_POST["submitfavorit"])) {
-            $stockItemID = $_POST["stockItemID"];
-            addProductToFavorit($stockItemID);
-        }
-
         ?>
+            
         <style>
             #Toevoegen {
             font-size: 18px;
